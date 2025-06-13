@@ -244,3 +244,4 @@ wsproto==1.2.0
 xgboost==2.0.3
 yarl==1.8.2
 zstandard==0.23.0
+setuptools
