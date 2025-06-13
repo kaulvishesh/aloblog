@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }} - AloBlog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+<body class="dark">
+    <header class="modern-header">
+        <div class="header-content">
+            <span class="logo">🌙 AloBlog</span>
+            <nav>
+                <a href="/write">Write</a>
+                <a href="/read">Read</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="card blog-post" style="background: {{ post.background_color }}">
+                <h2 style="font-family: {{ post.font_family }}">{{ post.title }}</h2>
+                <div class="blog-content" style="font-family: {{ post.font_family }}">{{ post.content | safe }}</div>
+            </div>
+            <a href="{{ url_for('read') }}" class="modern-btn" style="margin-top:1rem;">Back to All Blogs</a>
+        </div>
+    </main>
+    <footer class="modern-footer">
+        &copy; 2024 AloBlog
+    </footer>
+</body>
+</html>
